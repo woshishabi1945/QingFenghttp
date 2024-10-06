@@ -1,0 +1,393 @@
+* {
+            padding: 0;
+            margin: 0;
+            transition: all 0.5s;
+            user-select: none;
+        }
+        a {
+            text-decoration: none;
+            color: #444;
+            display: inline-block;
+        }
+        li {
+            list-style: none;
+        }
+        .mods-end {
+            height: 1px;
+            background-color: #eee;
+            margin: 20px 0;
+        }
+        .box-size {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        html,body {
+            min-height: 460px;
+            min-width: 280px;
+            background-color: #f0f0f0;
+            height: 100%;
+            background: url(./image/index_background.png);
+            -webkit-tap-highlight-color: transparent;
+            scroll-behavior: smooth;
+        }
+        .beian {
+            width: 280px;
+            color: #fff;
+            position: absolute;
+            font-size: 12px;
+            bottom: 30px;
+            left: 50%;
+            margin-left: -140px;
+            text-align: center;
+            user-select: text;
+        }
+        .nav-box {
+            height: 100%;
+        }
+        .nav-info {
+            height: calc(100% - 100px);
+            position: relative;
+            box-shadow:0 3px 3px 0 rgba(53, 116, 174, 0.6);
+            background: url(./image/nav_background.jpg) center no-repeat;
+            background-size: cover;
+            overflow: hidden;
+            background-color: #3333CC;
+        }
+        .info-image {
+            position: absolute;
+            left: 50%;
+        }
+        .info-title {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            color: #fff;
+        }
+        .info-say {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            color: #fff;
+            font-weight: normal;
+        }
+        .occlusion {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .nav-item-boxs {
+            text-align: center;
+        }
+        .nav-item-box {
+            margin-top: 28px;
+            display: inline-block;
+            background: #fff;
+            box-shadow: 0 0 5px 0 #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .nav-item {
+            margin: 0 -3px;
+            line-height: 38px;
+        }
+        .nav-item:hover {
+            background: #e5e5e5;
+        }
+        .skill-box,.my-info,.record-box,.site-box,.course-list {
+            padding: 30px;
+            box-sizing: border-box;
+        }
+        .mods-title {
+            font-size: 20px;
+            font-weight: normal;
+            font-family:'Courier New', Courier, monospace;
+        }
+        .skill-list {
+            display: flex;
+            margin-bottom: 40px;
+        }
+        .skill-list .item {
+            display: inline-block;
+            margin-top: 20px;
+            display: flex;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .skill-list .item .name {
+            color: rgb(37, 79, 142);
+            font-weight: bold;
+        }
+        .skill-list .item .rate-box {
+            display: inline-block;
+            height: 26px;
+            background: #f0f0f0;
+            width: 100%;
+            margin-left: 10px;
+            overflow: hidden;
+            border-radius: 13px;
+        }
+        .skill-box .item .rate {
+            height: 100%;
+            background: rgb(37, 79, 142);
+        }
+        .skill-box .item:hover .rate {
+            background: rgb(198, 101, 22);
+        }
+        .skill-box .item:hover .name {
+            color: rgb(198, 101, 22);
+        }
+        .main-box {
+            background-color: #fff;
+        }
+        .my-info-box {
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .my-info-box .item {
+            color: #000;
+        }
+        .my-info-box .item span {
+            color: #888;
+            user-select: text;
+        }
+        .record-list,.site-list {
+            display: flex;
+            margin-bottom: 40px;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .site-list .item {
+            position: relative;
+        }
+        @keyframes spin  {
+            0%{-webkit-transform:rotate(0deg);}
+            25%{-webkit-transform:rotate(5deg);}
+            50%{-webkit-transform:rotate(0deg);}
+            75%{-webkit-transform:rotate(-5deg);}
+            100%{-webkit-transform:rotate(0deg);}
+        }
+        .record-list .item:hover img {
+            animation: spin 2s linear infinite;
+        }
+        .site-list .item {
+            background-color: #ccc;
+            border-radius: 10px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .site-list .item .title {
+            color: #fff;
+            margin-top: 10px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .site-list .item img {
+            width: 100%;
+        }
+        .site-list .item .click {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: block;
+        }
+        .site-list .click-cover {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .site-list .click-tip {
+            width: 100%;
+            line-height: 60px;
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
+            font-size: 22px;
+            position: absolute;
+            top: 50%;
+            margin-top: -30px;
+        }
+        .site-list .item:hover .click-box {
+            opacity: 1;
+        }
+        .click-box {
+            opacity: 0;
+        }
+        .course-box {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            margin-bottom: 40px;
+        }
+        .course-box .item {
+            box-sizing: border-box;
+            border: #ddd solid 1px;
+            margin: 5px 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .course-box .item:hover {
+            background: #f4f4f4;
+        }
+        .course-box .item .title {
+            color: #666;
+            font-size: 16px;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 10px;
+        }
+        .course-box a {
+            display: block;
+            height: 100%;
+        }
+        .bottom {
+            margin-top: 50px;
+            height: 42px;
+            line-height: 42px;
+            font-size: 13px;
+            color: #fff;
+            background: #333;
+            text-align: center;
+        }
+
+
+        
+
+        @media(min-width: 720px) {
+            /* iPad 电脑样式 */
+            .nav-info {
+                border-radius: 0 0 100% 100% / 0 0 12% 12%;
+            }
+            .info-image {
+                width: 120px;
+                height: 120px;
+                border-radius: 78px;
+                border: 18px solid rgba(255, 255, 255, 0.3);
+                background: rgba(255, 255, 255, 0.3);
+                top: 70px;
+                margin-left: -78px;
+            }
+            .info-title {
+                font-size: 24px;
+                top: 240px;
+            }
+            .info-say {
+                font-size: 14px;
+                top: 280px;
+            }
+            .nav-item {
+                padding: 0 26px;
+                font-size: 14px;
+            }
+            .skill-list .item .name {
+                width: 120px;
+                font-size: 18px;
+                height: 26px;
+                line-height: 26px;
+            }
+            .skill-list .item {
+                width: calc(33% - 40px);
+            }
+            .skill-list {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .my-info-box .item {
+                font-size: 16px;
+                line-height: 36px;
+            }
+            .record-list .item {
+                width: calc(33% - 30px);
+                border-radius: 10px;
+                margin-top: 30px;
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            .record-list .item img {
+                width: 100%;
+                border-radius: 10px;
+            }
+            .site-list .item {
+                width: calc(50% - 30px);
+                margin-top: 30px;
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            .site-list .item img {
+                border-radius: 10px 10px 0 0;
+                height: 300px;
+                background: #ddd;
+            }
+            .course-box .item {
+                width: calc(33% - 20px);
+            }
+        }
+
+        @media(max-width: 720px) {
+            /* 手机样式 */
+            .nav-info {
+                border-radius: 0 0 100% 100% / 0 0 10% 10%;
+            }
+            .info-image {
+                width: 100px;
+                height: 100px;
+                border-radius: 65px;
+                border: 15px solid rgba(255, 255, 255, 0.3);
+                top: 70px;
+                margin-left: -65px;
+            }
+            .info-title {
+                font-size: 23px;
+                top: 220px;
+            }
+            .info-say {
+                font-size: 13px;
+                top: 260px;
+            }
+            .nav-item {
+                padding: 0 15px;
+                font-size: 13px;
+            }
+            .skill-list {
+                flex-direction: column;
+            }
+            .record-list .item img {
+                width: 100%;
+                border-radius: 5px;
+            }
+            .skill-list .item .name {
+                width: 120px;
+                font-size: 17px;
+                height: 26px;
+                line-height: 26px;
+            }
+            .my-info-box .item {
+                font-size: 14px;
+                line-height: 34px;
+            }
+            .record-list .item {
+                width: calc(50% - 20px);
+                border-radius: 8px;
+                margin-top: 20px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            .site-list .item img {
+                border-radius: 8px 8px 0 0;
+                height: 220px;
+            }
+            .site-list .item {
+                width: calc(100% - 30px);
+                margin-top: 30px;
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            .course-box .item {
+                width: calc(50% - 20px);
+            }
+        }
